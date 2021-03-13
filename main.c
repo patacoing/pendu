@@ -7,20 +7,22 @@
 
 
 int main(){
+    int* tab = NULL;
     int trys = 10;
-    char *hidden_word = "MARRRON";
-    char *find_word = "******";
+    char hidden_word[] = "MARRRON";
+    char find_word[] = "******";
     char c;
     boolean flag = FALSE;
-    //while (trys >=0 && flag == FALSE){
+    while (trys >=0 && flag == FALSE){
         printf("nombre d'essais restants : %d\n",trys);
         puts("Entrer une lettre : ");
-        c = getchar();
-        read(c,hidden_word,find_word);
-        /*printf("mot caché : %s\n",find_word);
+        c = fgetc(stdin);
+        read(tab,c,hidden_word,find_word);
+        free(tab);
+        printf("mot caché : %s\n",find_word);
         if(strcmp(hidden_word,find_word) == 0) flag = TRUE;
-        else trys--;*/
-    //}
+        else trys--;
+    }
     if(flag == TRUE) puts("VOUS AVEZ GAGNE !");
     else printf("perdu ! le mot caché était : %s\n",hidden_word);
     return 0;
