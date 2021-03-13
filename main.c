@@ -8,8 +8,8 @@
 
 int main(){
     int trys = 10;
-    char hidden_word[50] = "MARRRON";
-    char find_word[50] = "******";
+    char *hidden_word = "MARRRON";
+    char *find_word = "******";
     char c;
     boolean flag = FALSE;
     //while (trys >=0 && flag == FALSE){
